@@ -1,0 +1,20 @@
+version: '1.0'
+
+services:
+  go:
+    build: ./go
+    image: yourusername/myapp-go:latest
+    ports:
+      - "8080:8080"
+
+  nextjs:
+    build: ./nextjs
+    image: yourusername/myapp-nextjs:latest
+    ports:
+      - "3000:3000"
+
+  wordpress:
+    build: ./wordpress
+    image: yourusername/myapp-wordpress:latest
+    ports:
+      - "8081:80"

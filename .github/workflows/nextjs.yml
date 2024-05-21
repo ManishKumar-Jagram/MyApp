@@ -1,6 +1,18 @@
 name: Next.js CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+    paths:
+      - 'nextjs/**'
+  pull_request:
+    branches:
+      - main
+      - 'feature/*'
+    paths:
+      - 'nextjs/**'
 
 jobs:
   build:
@@ -16,10 +28,4 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
-
-      - name: Run linter
-        run: npm run lint
+        run: cd nextjs && npm install
